@@ -1,10 +1,20 @@
-import React from 'react'
+import React from "react";
+import OneLevelDown from './OneLevelDown';
 
-function App() {
+const App = () => {
+  const loggedInUser = {
+    username: "Ben",
+    email: "ben@wbs.com",
+    isAdmin: true,
+  };
+
   return (
-    <div >
-    bwok
-    </div>
+    <>
+  <h1>
+  Context Workshop
+  </h1>
+  <OneLevelDown/>
+  </>
   );
 }
 
