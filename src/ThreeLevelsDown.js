@@ -1,13 +1,32 @@
-import React from "react"
+import React, { useContext } from "react";
+import UserContext from "./context/UserContext";
+import { useThemeContext } from "./context/ThemeContext";
 
 const ThreeLevelsDown = () => {
+  const { userData } = useContext(UserContext);
+  const { theme } = useThemeContext();
 
-    return (
-        <div>
-            <p>Three Levels Down! ⬇️</p>
-            <h3>🤷 User info should be here! 🤷</h3>
-        </div>
-    )
-}
+  const emoji = theme === "light" ? "🤷" : "🧛";
 
-export default ThreeLevelsDown
+  return (
+    <div>
+      <p>Three Levels Down! ⬇️</p>
+
+      {userData ? (
+        <>
+          <h3>
+            {emoji} Welcome back {userData.username} {emoji}
+          </h3>
+          <p>Your email is {userData.email}</p>
+          <p>Admin status: {userData.isAdmin ? "true" : "false"}</p>
+        </>
+      ) : (
+        <h3>
+          {emoji} User info should be here! {emoji}
+        </h3>
+      )}
+    </div>
+  );
+};
+
+export default ThreeLevelsDown;

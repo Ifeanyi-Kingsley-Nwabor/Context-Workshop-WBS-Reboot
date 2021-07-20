@@ -1,11 +1,11 @@
 import React from "react";
-import TwoLevelsDown from './TwoLevelsDown';
+import TwoLevelsDown from "./TwoLevelsDown";
 
-const OneLevelDown = () => {
+const OneLevelDown = ({ user }) => {
   return (
     <div>
       <p>One Level Down! ⬇️</p>
-      <TwoLevelsDown />
+      <TwoLevelsDown user={user} />
     </div>
   );
 };
